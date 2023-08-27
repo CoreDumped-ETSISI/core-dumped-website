@@ -48,7 +48,7 @@ We welcome contributions from the community! If you want to contribute to Core D
 
 ## License
 
-Core Dumped Website © 2023 by Core Dumped Association is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1)
+This project is released under the [Apache 2.0](LICENSE) license
 
 ## Authors and Contributors
 
