@@ -1,63 +1,38 @@
-# Core Dumped Website
+# create-svelte
 
-New website for the Core Dumped Association, we aim to modernize and streamline the functionalities of the previous website.
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Table of Contents
+## Creating a project
 
-- [About](#about)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Authors and Contributors](#authors-and-contributors)
-- [Code of Conduct](#code-of-conduct)
-- [Changelog](#changelog)
-
-## About
-
-The new website will allow users to be informed of new projects and events organized by the association, it will be the main access point for contacting the association.
-The website will host the Core Dumped library.
-All projects and events will be added into the website. Users will be able to search and filter through this data.
-
-## Installation
-
-Clone this repository and run
+If you're seeing this, you've probably already done this step. Congrats!
 
 ```bash
-npm install
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
 ```
 
-## Usage
+## Developing
 
-To run in dev mode
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-To build and start in prod mode:
+## Building
+
+To create a production version of your app:
 
 ```bash
 npm run build
-npm run preview
 ```
 
-## Contributing
+You can preview the production build with `npm run preview`.
 
-We welcome contributions from the community! If you want to contribute to Core Dumped Website, please follow the guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-## License
-
-This project is released under the [Apache 2.0](LICENSE) license
-
-## Authors and Contributors
-
-Check out the [AUTHORS.md](AUTHORS.md) file to see a list of all the wonderful people who have contributed to this project.
-
-## Code of Conduct
-
-We expect all contributors to follow our [Code of Conduct](CODE_OF_CONDUCT.md) to maintain a respectful and inclusive environment for everyone.
-
-## Changelog
-
-For a detailed list of changes and versions, check the [CHANGELOG.md](CHANGELOG.md) file.
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
