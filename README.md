@@ -1,8 +1,6 @@
-# Project Name
+# Core Dumped Website
 
-[One-sentence project description goes here.]
-
-![Project Logo](project_logo.png) (if applicable)
+New website for the Core Dumped Association, we aim to modernize and streamline the functionalities of the previous website.
 
 ## Table of Contents
 
@@ -19,21 +17,40 @@
 
 [Provide a brief description of the project, what it does, and its main features.]
 
+The new website will allow users to be informed of new projects and events organized by the association, it will be the main access point for contacting the association.
+The website will host the Core Dumped library.
+All projects and events will be added into the website. Users will be able to search and filter through this data.
+
 ## Installation
 
-[Instructions on how to install and set up the project. Include any dependencies that need to be installed and how to install them.]
+Clone this repository and run
+
+```bash
+npm install
+```
 
 ## Usage
 
-[Instructions on how to use the project, along with code examples or relevant screenshots if applicable.]
+To run in dev mode
+
+```bash
+npm run dev
+```
+
+To build and start in prod mode:
+
+```bash
+npm run build
+npm run preview
+```
 
 ## Contributing
 
-We welcome contributions from the community! If you want to contribute to [Project Name], please follow the guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+We welcome contributions from the community! If you want to contribute to Core Dumped Website, please follow the guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## License
 
-[Project Name] is released under the [License Name](LICENSE). [Include a brief summary of the license terms and a link to the full license file.]
+Core Dumped Website © 2023 by Core Dumped Association is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1)
 
 ## Authors and Contributors
 
