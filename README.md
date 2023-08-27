@@ -15,8 +15,6 @@ New website for the Core Dumped Association, we aim to modernize and streamline 
 
 ## About
 
-[Provide a brief description of the project, what it does, and its main features.]
-
 The new website will allow users to be informed of new projects and events organized by the association, it will be the main access point for contacting the association.
 The website will host the Core Dumped library.
 All projects and events will be added into the website. Users will be able to search and filter through this data.
