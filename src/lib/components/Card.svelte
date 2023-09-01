@@ -71,7 +71,7 @@
     flex-direction: column;
     overflow: hidden;
     width: 300px;
-    height: 400px;
+    height: 450px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.205);
     border-radius: 8px;
     background-color: white;
@@ -104,8 +104,8 @@
   img {
     display: block;
     width: 100%;
-    min-height: 250px;
-    max-height: 250px;
+    min-height: 300px;
+    max-height: 300px;
     object-fit: fill;
     border-radius: 8px 8px 0 0;
   }
