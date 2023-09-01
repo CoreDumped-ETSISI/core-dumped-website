@@ -13,13 +13,15 @@
 -->
 
 <script lang="ts">
+  import { page } from "$app/stores";
+  export let id: string;
   export let title: string;
   export let description: string;
   export let image_src: string;
   export let date: string;
   export let status: string;
   export let category: string;
-  export let url: string;
+  const url: string = "/" + id;
   const colors: Map<string, string> = new Map<string, string>();
   colors.set("Próximamente", "blue");
   colors.set("En progreso", "orange");
@@ -29,6 +31,11 @@
   if (description.length > 100) {
     description = description.slice(0, 97) + "...";
   }
+  date = new Date(date).toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  });
 </script>
 
 <a href={url}>

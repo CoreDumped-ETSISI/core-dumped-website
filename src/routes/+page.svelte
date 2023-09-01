@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  import { page } from "$app/stores";
 
   export let data: PageData;
   import Card from "$lib/components/Card.svelte";
@@ -14,17 +13,13 @@
   <Grid>
     {#each data.data as item}
       <Card
+        id={item._id}
         title={item.title}
         description={item.description}
         image_src={item.image}
-        date={new Date(item.date).toLocaleDateString("es-ES", {
-          year: "numeric",
-          month: "numeric",
-          day: "numeric",
-        })}
+        date={item.date}
         category={item.category}
         status={item.status}
-        url={$page.url + item.url.substr(item.url.indexOf("/") + 1)}
       />
     {/each}
   </Grid>
