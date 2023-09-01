@@ -55,6 +55,10 @@
 </a>
 
 <style>
+  a {
+    all: unset;
+    cursor: pointer;
+  }
   .card {
     display: flex;
     flex-direction: column;
@@ -67,12 +71,13 @@
     margin: 8px;
   }
   .card_text {
-    margin: 5px 10px 10px 10px;
+    margin: 5px 8px 8px 8px;
   }
   .title {
     margin-bottom: 8px;
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
   .whitespace {
     flex: 1;
