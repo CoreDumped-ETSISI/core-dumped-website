@@ -3,7 +3,7 @@
   import { page } from "$app/stores";
 </script>
 
-<link rel="stylesheet" href="global.css" />
+<link rel="stylesheet" href="/global.css" />
 <!--Fontawesome is an icon kit, we should change to a Core Dumped account on production-->
 <head>
   <script
@@ -14,7 +14,7 @@
 </head>
 <body>
   <header>
-    <a href="/"><img src="logo.png" alt="Logo" class="logo" /></a>
+    <a href="/"><img src="/logo.png" alt="Logo" class="logo" /></a>
     <div class="topnav">
       <a href="/" class:active={$page.url.pathname === "/"}>Inicio</a>
       <a href="/proyectos" class:active={$page.url.pathname === "/proyectos"}
@@ -35,7 +35,7 @@
 
   <footer>
     <div class="footer_wrap">
-      <a href="/"><img src="logo.png" alt="Logo" class="logo" /></a>
+      <a href="/"><img src="/logo.png" alt="Logo" class="logo" /></a>
       <div class="footer_socials">
         <ul>
           <li>
