@@ -11,44 +11,45 @@
   let status_color: string = colors.get(item.status) || "black";
 </script>
 
+<div class="datacard">
+  <Title>{item.type}: {item.title}</Title>
+  <div class="data">
+    Publicado:
+    {new Date(item.date).toLocaleDateString("es-ES", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })}
+    <div class="tag category">
+      <p>{item.category}</p>
+    </div>
+    <div class="tag" style="background-color: {status_color};">
+      <p>{item.status}</p>
+    </div>
+  </div>
+</div>
 <div class="container">
   <img src={item.image} alt="{item.title} poster" />
-  <div class="column">
-    <div class="datacard">
-      <Title>{item.type}: {item.title}</Title>
-      <ul class="data">
-        <li style="font-size: 16px;">
-          Publicado:
-          {new Date(item.date).toLocaleDateString("es-ES", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </li>
-        <li>
-          <div class="tag category">
-            <p>{item.category}</p>
-          </div>
-        </li>
-        <li>
-          <div class="tag" style="background-color: {status_color};">
-            <p>{item.status}</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="datacard description">
-      <h2>Descripción</h2>
-      <p>{item.description}</p>
-    </div>
+  <div class="description">
+    <h2>Descripción</h2>
+    <p>{item.description}</p>
   </div>
 </div>
 
 <style>
+  @media (orientation: landscape) {
+    img {
+      max-width: 50%;
+    }
+  }
+  @media (orientation: portrait) {
+    img {
+      max-width: 100%;
+    }
+  }
   img {
-    width: 40%;
-    height: 100%;
+    flex: 1;
     object-fit: fill;
     border-radius: 24px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
@@ -60,12 +61,6 @@
     flex-flow: row wrap;
     gap: 8px;
   }
-  .column {
-    display: flex;
-    flex-direction: column;
-    flex-flow: column wrap;
-    gap: 8px;
-  }
   .data {
     margin-top: 8px;
     list-style-type: none;
@@ -75,7 +70,6 @@
     border-radius: 24px;
     padding: 16px;
     max-height: fit-content;
-    flex-grow: 1 1 auto;
     background: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
   }
@@ -94,9 +88,16 @@
     border-radius: 24px;
   }
   .description {
-    padding-right: 25%;
-    flex-grow: 1;
+    border-radius: 24px;
+    padding: 16px;
+    background: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    flex: 1;
     text-align: justify;
     overflow-y: auto;
+    font-size: 20px;
+  }
+  .description p {
+    margin-top: 8px;
   }
 </style>
