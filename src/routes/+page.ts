@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
 
-interface Card {
+export interface card {
     title: string;
     description: string;
     type: string;
@@ -14,7 +14,7 @@ interface Card {
 
 export const load: PageLoad = async ({ fetch, params }) => {
     const cards = await fetch('http://localhost:3000/cartas');
-    let data: Array<Card> = await cards.json();
+    let data: Array<card> = await cards.json();
     console.log(data);
     return { data };
 };

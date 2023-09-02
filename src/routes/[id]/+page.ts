@@ -2,17 +2,7 @@ import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
 
 
-interface Card {
-    title: string;
-    description: string;
-    type: string;
-    date: string;
-    url: string;
-    _id: string;
-    image: string;
-    category: string;
-    status: string;
-}
+import type { card } from "../+page"
 
 export const load: PageLoad = async ({ fetch, params }) => {
     if (params.id.length != 24) {
@@ -23,7 +13,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
     const response = await fetch('http://localhost:3000/cartas/' + params.id);
     console.log(response)
     if (response.ok) {
-        let data: Card = await response.json();
+        let data: card = await response.json();
         return { data };
     }
     else {
