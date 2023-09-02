@@ -14,6 +14,7 @@
 
 <script lang="ts">
   import { page } from "$app/stores";
+  import StatusTag from "./StatusTag.svelte";
   export let id: string;
   export let title: string;
   export let description: string;
@@ -22,12 +23,6 @@
   export let status: string;
   export let category: string;
   const url: string = "/" + id;
-  const colors: Map<string, string> = new Map<string, string>();
-  colors.set("Próximamente", "blue");
-  colors.set("En progreso", "orange");
-  colors.set("Completado", "#5fb030");
-  colors.set("Cancelado", "red");
-  let status_color: string = colors.get(status) || "black";
   if (description.length > 100) {
     description = description.slice(0, 97) + "...";
   }
@@ -54,9 +49,7 @@
         <p>{category}</p>
       </div>
       <div class="whitespace" />
-      <div class="tag" style="background-color: {status_color};">
-        <p>{status}</p>
-      </div>
+      <StatusTag {status} />
     </div>
   </div>
 </a>

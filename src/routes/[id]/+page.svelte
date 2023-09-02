@@ -1,14 +1,10 @@
 <script lang="ts">
+  import StatusTag from "../../lib/components/StatusTag.svelte";
+
   import Title from "$lib/components/Title.svelte";
   import type { PageData } from "./$types";
   export let data: PageData;
   let item = data.data;
-  const colors: Map<string, string> = new Map<string, string>();
-  colors.set("Próximamente", "blue");
-  colors.set("En progreso", "orange");
-  colors.set("Completado", "#5fb030");
-  colors.set("Cancelado", "red");
-  let status_color: string = colors.get(item.status) || "black";
 </script>
 
 <div class="datacard">
@@ -24,9 +20,7 @@
     <div class="tag category">
       <p>{item.category}</p>
     </div>
-    <div class="tag" style="background-color: {status_color};">
-      <p>{item.status}</p>
-    </div>
+    <StatusTag status={item.status} />
   </div>
 </div>
 <div class="container">
