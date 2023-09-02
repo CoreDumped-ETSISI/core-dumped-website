@@ -15,44 +15,38 @@
 
 <script lang="ts">
   import Search from "$lib/components/Search.svelte";
-  import Grid from "./Grid.svelte";
   export let search_text: string = "";
-  export let status_filter: string;
-  export let category_filter: string;
-  export let date_filter: Date = new Date();
+  export let status_filter: string = "";
+  export let category_filter: string = "";
+  export let date_filter: string = "";
   export let categories: string[];
   export let statuses: string[];
   function resetAll() {
-    date_filter = new Date();
+    date_filter = "";
     status_filter = "";
     category_filter = "";
+    search_text = "";
   }
 </script>
 
 <div class="filters">
-  <Grid width={225}>
-    <Grid width={150} gap={8}>
-      <input
-        class="selector date_select"
-        type="month"
-        bind:value={date_filter}
-      />
-      <select class="selector" bind:value={status_filter}>
-        <option value="" selected hidden>Filtra por estado</option>
-        {#each statuses as status}
-          <option value={status.toLocaleLowerCase()}>{status}</option>
-        {/each}
-      </select>
-      <select class="selector" bind:value={category_filter}>
-        <option value="" selected hidden>Filtra por categoría</option>
-        {#each categories as category}
-          <option value={category.toLocaleLowerCase()}>{category}</option>
-        {/each}
-      </select>
-      <button on:click={resetAll}>Restablecer</button>
-    </Grid>
-    <Search bind:search_text />
-  </Grid>
+  <div class="selectors">
+    <input class="selector date_select" type="month" bind:value={date_filter} />
+    <select class="selector" bind:value={status_filter}>
+      <option value="" selected hidden>Filtra por estado</option>
+      {#each statuses as status}
+        <option value={status.toLocaleLowerCase()}>{status}</option>
+      {/each}
+    </select>
+    <select class="selector" bind:value={category_filter}>
+      <option value="" selected hidden>Filtra por categoría</option>
+      {#each categories as category}
+        <option value={category.toLocaleLowerCase()}>{category}</option>
+      {/each}
+    </select>
+    <button on:click={resetAll}>Restablecer</button>
+  </div>
+  <Search bind:search_text />
 </div>
 
 <style>
@@ -61,6 +55,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .selectors {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 8px;
   }
   .selector {
     height: max-content;

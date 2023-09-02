@@ -1,3 +1,8 @@
+<!--
+  @component
+  # Status Tag
+  Tag that gets an input `status` and styles itself according to that status.
+-->
 <script lang="ts">
   export let status: string;
   const colors: Map<string, string> = new Map<string, string>();

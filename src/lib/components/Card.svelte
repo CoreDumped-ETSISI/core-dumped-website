@@ -9,7 +9,6 @@
   - date
   - status
   - category
-  - status_color (Color for the status card)
 -->
 
 <script lang="ts">
