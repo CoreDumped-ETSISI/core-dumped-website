@@ -2,6 +2,8 @@
   import Grid from "$lib/components/Grid.svelte";
   import PeopleCard from "$lib/components/PeopleCard.svelte";
   import Title from "$lib/components/Title.svelte";
+  import type { PageData } from "./$types";
+  export let data: PageData;
 </script>
 
 <Title>Sobre Nosotros</Title>
@@ -13,27 +15,20 @@
 </p>
 <Title>Directiva</Title>
 <Grid width={225}>
-  <PeopleCard
-    name="Sofia"
-    appointment="Presidenta"
-    socials={new Map([
-      ["discord", "www.discord.com"],
-      ["email", "sofia@gmail.com"],
-    ])}
-  />
-  <PeopleCard name="Sebas" appointment="Vicepresidente" socials={new Map([])} />
-  <PeopleCard
-    name="Daniel"
-    appointment="Secretario"
-    socials={new Map([
-      ["linkedin", "www.linkedin.com"],
-      ["email", "daniel@gmail.com"],
-      ["discord", "discord.com"],
-      ["instagram", "instagram.com"],
-      ["github", "github.com"],
-      ["telegram", "telegram.com"],
-    ])}
-  />
+  {#each data.people as item}
+    <PeopleCard
+      name={item.name}
+      appointment={item.appointment}
+      socials={new Map([
+        ["discord", item.discord],
+        ["email", item.email],
+        ["instagram", item.instagram],
+        ["telegram", item.telegram],
+        ["github", item.github],
+        ["linkedin", item.linkedin],
+      ])}
+    />
+  {/each}
 </Grid>
 
 <style>

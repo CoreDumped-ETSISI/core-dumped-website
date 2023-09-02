@@ -27,7 +27,7 @@
   {#if socials.size > 0}
     <div class="footer_socials">
       <ul>
-        {#if socials.has("email")}
+        {#if socials.get("email") !== undefined}
           <li>
             <a href="mailto:{socials.get('email')}">
               <i>
@@ -36,35 +36,35 @@
             </a>
           </li>
         {/if}
-        {#if socials.has("github")}
+        {#if socials.get("github") !== undefined}
           <li>
             <a href={socials.get("github")}
               ><i class="fa-brands fa-github fa-2xl" />
             </a>
           </li>
         {/if}
-        {#if socials.has("telegram")}
+        {#if socials.get("telegram") !== undefined}
           <li>
             <a href={socials.get("telegram")}>
               <i class="fa-brands fa-telegram fa-2xl" />
             </a>
           </li>
         {/if}
-        {#if socials.has("discord")}
+        {#if socials.get("discord") !== undefined}
           <li>
             <a href={socials.get("discord")}>
               <i class="fa-brands fa-discord fa-2xl" />
             </a>
           </li>
         {/if}
-        {#if socials.has("instagram")}
+        {#if socials.get("instagram") !== undefined}
           <li>
             <a href={socials.get("instagram")}>
               <i class="fa-brands fa-square-instagram fa-2xl" />
             </a>
           </li>
         {/if}
-        {#if socials.has("linkedin")}
+        {#if socials.get("linkedin") !== undefined}
           <li>
             <a href={socials.get("linkedin")}>
               <i class="fa-brands fa-linkedin fa-2xl" />
