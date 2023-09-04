@@ -7,53 +7,88 @@
   let item = data.data;
 </script>
 
-<div class="datacard">
-  <Title>{item.type}: {item.title}</Title>
-  <div class="data">
-    Publicado:
-    {new Date(item.date).toLocaleDateString("es-ES", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    })}
-    <div class="tag category">
-      <p>{item.category}</p>
+<div class="center">
+  <div class="landscapeFlex">
+    <div class="datacard">
+      <Title>{item.type}: {item.title}</Title>
+      <div class="data">
+        Publicado:
+        {new Date(item.date).toLocaleDateString("es-ES", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
+        <div class="tag category">
+          <p>{item.category}</p>
+        </div>
+        <StatusTag status={item.status} />
+      </div>
     </div>
-    <StatusTag status={item.status} />
-  </div>
-</div>
-<div class="container">
-  <img src={item.image} alt="{item.title} poster" />
-  <div class="description">
-    <h2>Descripción</h2>
-    <p>{item.description}</p>
+    <div class="container">
+      <img src={item.image} alt="{item.title} poster" />
+      <div class="description">
+        <h2>Descripción</h2>
+        <p>{item.description}</p>
+      </div>
+    </div>
   </div>
 </div>
 
 <style>
   @media (orientation: landscape) {
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+    .landscapeFlex {
+      display: flex;
+      flex-direction: column;
+      max-width: 75%;
+      align-content: center;
+    }
     img {
-      max-width: 50%;
+      max-width: 50vh;
+    }
+    .container {
+      flex-flow: row nowrap;
+    }
+    .datacard {
+      flex: 1;
     }
   }
   @media (orientation: portrait) {
     img {
       max-width: 100%;
     }
-  }
-  img {
-    flex: 1;
-    object-fit: fill;
-    border-radius: 24px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    .container {
+      flex-flow: row wrap;
+    }
   }
   .container {
     margin-top: 8px;
     display: flex;
     flex-direction: row;
-    flex-flow: row wrap;
     gap: 8px;
+  }
+  img {
+    object-fit: fill;
+    border-radius: 24px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    flex: 1 1 auto;
+  }
+  .description {
+    border-radius: 24px;
+    padding: 16px;
+    background: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    flex: 2 1 auto;
+    text-align: justify;
+    overflow-y: auto;
+    font-size: 20px;
+  }
+  .description p {
+    margin-top: 8px;
   }
   .data {
     margin-top: 8px;
@@ -80,18 +115,5 @@
     color: #5fb030;
     font-weight: 600;
     border-radius: 24px;
-  }
-  .description {
-    border-radius: 24px;
-    padding: 16px;
-    background: white;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
-    flex: 1;
-    text-align: justify;
-    overflow-y: auto;
-    font-size: 20px;
-  }
-  .description p {
-    margin-top: 8px;
   }
 </style>

@@ -11,7 +11,6 @@ export const load: PageLoad = async ({ fetch, params }) => {
         });
     }
     const response = await fetch('http://localhost:3000/cartas/' + params.id);
-    console.log(response)
     if (response.ok) {
         let data: card = await response.json();
         return { data };

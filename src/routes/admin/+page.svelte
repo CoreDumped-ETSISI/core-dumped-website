@@ -9,7 +9,7 @@
     if ($page.url.searchParams.has("back")) {
       history.back();
     } else {
-      goto("edit/cartas", { invalidateAll: true });
+      goto("edit/cartas");
     }
   }
 </script>

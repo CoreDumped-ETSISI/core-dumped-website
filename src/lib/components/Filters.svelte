@@ -94,14 +94,19 @@
 
 <div class="filters">
   <div class="selectors">
-    <input class="selector date_select" type="month" bind:value={date_filter} />
-    <select class="selector" bind:value={status_filter}>
+    <input
+      id="date"
+      class="selector date_select"
+      type="month"
+      bind:value={date_filter}
+    />
+    <select id="status" class="selector" bind:value={status_filter}>
       <option value="" selected hidden>Filtra por estado</option>
       {#each statuses as status}
         <option value={status.toLocaleLowerCase()}>{status}</option>
       {/each}
     </select>
-    <select class="selector" bind:value={category_filter}>
+    <select id="category" class="selector" bind:value={category_filter}>
       <option value="" selected hidden>Filtra por categoría</option>
       {#each categories as category}
         <option value={category.toLocaleLowerCase()}>{category}</option>
