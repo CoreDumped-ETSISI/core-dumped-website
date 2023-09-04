@@ -14,14 +14,14 @@
   let categories: string[] = [];
 
   let formData: any = {
-    type: "",
-    title: "",
-    description: "",
-    image: "",
-    date: "",
-    category: "",
+    type: data.data.type,
+    title: data.data.title,
+    description: data.data.description,
+    image: data.data.image,
+    date: data.data.date,
+    category: data.data.category,
     newCategory: "",
-    status: "",
+    status: data.data.status,
   };
   $: disable = formData.type === "";
   $: disableNew = formData.category !== "new";
@@ -65,6 +65,7 @@
   </div>
   <div class="formColumn">
     <form method="POST" use:enhance>
+      <input type="text" name="id" id="id" value={data.data._id} hidden />
       <label for="type">Tipo</label>
       <select name="type" id="type" bind:value={formData.type} required>
         <option value="Proyecto">Proyecto</option>
@@ -127,7 +128,7 @@
       <br />
       <label for="date">Fecha de publicación</label>
       <br />
-      <small> Si se deja vacía se guardará como hoy </small>
+      <small> Dejala vacía para mantenerla </small>
       <br />
       <input
         type="date"
@@ -179,7 +180,7 @@
         <option value="Próximamente">Próximamente</option>
       </select>
       <br />
-      <button type="submit" disabled={disable}>Publicar</button>
+      <button type="submit" disabled={disable}>Actualizar</button>
       {#if form?.error}
         <div class="error">
           ! {form.error}
