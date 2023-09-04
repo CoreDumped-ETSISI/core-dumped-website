@@ -13,7 +13,7 @@
   - date_filter (Filter by month)
 -->
 <script context="module" lang="ts">
-  import type { card } from "../../routes/+page";
+  import type { card } from "../../routes/(main)/+page";
   /**
    * Function that checks if two dates are on the same month
    * @param d1 date 1

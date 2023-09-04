@@ -2,7 +2,9 @@
   import Grid from "$lib/components/Grid.svelte";
   import PeopleCard from "$lib/components/PeopleCard.svelte";
   import Title from "$lib/components/Title.svelte";
+  import { onMount } from "svelte";
   import type { PageData } from "./$types";
+  import { goto } from "$app/navigation";
   export let data: PageData;
 </script>
 

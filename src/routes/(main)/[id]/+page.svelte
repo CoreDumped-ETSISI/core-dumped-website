@@ -1,5 +1,5 @@
 <script lang="ts">
-  import StatusTag from "../../lib/components/StatusTag.svelte";
+  import StatusTag from "../../../lib/components/StatusTag.svelte";
 
   import Title from "$lib/components/Title.svelte";
   import type { PageData } from "./$types";
