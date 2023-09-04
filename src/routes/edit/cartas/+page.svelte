@@ -69,15 +69,25 @@
 <Grid>
   {#key filtered}
     {#each filtered as item}
-      <Card
-        id={item._id}
-        title={item.title}
-        description={item.description}
-        image_src={item.image}
-        date={item.date}
-        category={item.category}
-        status={item.status}
-      />
+      <div class="edit">
+        <Card
+          id={item._id}
+          title={item.title}
+          description={item.description}
+          image_src={item.image}
+          date={item.date}
+          category={item.category}
+          status={item.status}
+        />
+        <div class="button">
+          <a href="/edit/{item._id}"
+            ><i
+              class="fa-solid fa-pen-to-square fa-2xl"
+              style="color: #ffffff;"
+            /></a
+          >
+        </div>
+      </div>
     {/each}
   {/key}
 </Grid>
@@ -100,6 +110,12 @@
     padding-bottom: 2px;
     margin-left: 8px;
   }
+  .edit {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
 
   .floatingActionButton {
     all: unset;
@@ -117,5 +133,13 @@
   }
   .floatingActionButton:active {
     box-shadow: none;
+  }
+  .button {
+    all: unset;
+    background-color: #5fb030;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.205);
   }
 </style>
