@@ -9,10 +9,12 @@
   - date
   - status
   - category
+  - adminMode (activate this in creation screens preview so the image changes)
 -->
 
 <script lang="ts">
   import { page } from "$app/stores";
+  import { onMount } from "svelte";
   import StatusTag from "./StatusTag.svelte";
   export let id: string;
   export let title: string;
@@ -21,20 +23,29 @@
   export let date: string;
   export let status: string;
   export let category: string;
+  export const adminMode: boolean = false;
   const url: string = "/" + id;
   if (description.length > 100) {
     description = description.slice(0, 97) + "...";
   }
-  date = new Date(date).toLocaleDateString("es-ES", {
+  $: date = new Date(date).toLocaleDateString("es-ES", {
     year: "numeric",
     month: "numeric",
     day: "numeric",
+  });
+
+  let img: HTMLImageElement;
+
+  onMount(() => {
+    if (adminMode && img.naturalWidth === 0 && img.naturalHeight === 0) {
+      img.src = "/fallback.png";
+    }
   });
 </script>
 
 <a href={url}>
   <div class="card">
-    <img src={image_src} alt={title + "poster"} />
+    <img src={image_src} alt={title + "poster"} bind:this={img} />
     <div class="card_text">
       <div class="title">
         <h3>{title}</h3>
