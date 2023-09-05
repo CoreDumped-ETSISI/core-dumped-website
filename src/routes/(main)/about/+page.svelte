@@ -21,6 +21,7 @@
     <PeopleCard
       name={item.name}
       appointment={item.appointment}
+      photo={item.image}
       socials={new Map([
         ["discord", item.discord],
         ["email", item.email],
