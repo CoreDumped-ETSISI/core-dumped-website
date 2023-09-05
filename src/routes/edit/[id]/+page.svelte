@@ -12,7 +12,14 @@
   let disable: boolean = true;
   let disableNew: boolean = true;
   let categories: string[] = [];
+  let deleting = false;
+  let validDelete = false;
+  let confirmDelete: string = "";
+  function executeDeleteProcedure() {
+    deleting = true;
+  }
 
+  $: validDelete = confirmDelete.trim() === "CONFIRMAR";
   let formData: any = {
     type: data.data.type,
     title: data.data.title,
@@ -58,13 +65,12 @@
         description={formData.description.length > 0
           ? formData.description
           : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat id leo eget tincidunt. Nullam ullamcorper."}
-        adminMode={true}
         id=""
       />
     {/key}
   </div>
   <div class="formColumn">
-    <form method="POST" use:enhance>
+    <form method="POST" use:enhance action="?/update">
       <input type="text" name="id" id="id" value={data.data._id} hidden />
       <label for="type">Tipo</label>
       <select name="type" id="type" bind:value={formData.type} required>
@@ -181,6 +187,26 @@
       </select>
       <br />
       <button type="submit" disabled={disable}>Actualizar</button>
+      <button
+        type="button"
+        class="delete"
+        hidden={deleting}
+        on:click={executeDeleteProcedure}>Borrar</button
+      >
+      <input
+        type="text"
+        name="delete"
+        placeholder="Escribe CONFIRMAR"
+        hidden={!deleting}
+        bind:value={confirmDelete}
+      />
+      <button
+        type="submit"
+        formaction="?/delete"
+        class="delete"
+        hidden={!deleting}
+        disabled={!validDelete}>Confirmar borrar</button
+      >
       {#if form?.error}
         <div class="error">
           ! {form.error}
@@ -249,5 +275,8 @@
   }
   .error {
     color: red;
+  }
+  .delete {
+    background-color: red;
   }
 </style>

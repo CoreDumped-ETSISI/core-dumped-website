@@ -1,8 +1,8 @@
-import { fail, json } from '@sveltejs/kit';
+import { fail, json, redirect } from '@sveltejs/kit';
 import type { Actions } from './$types';
 
 export const actions = {
-    default: async (event) => {
+    update: async (event) => {
         const JWT = event.cookies.get("AuthorizationToken");
         const data = await event.request.formData();
 
@@ -41,4 +41,21 @@ export const actions = {
         }
         return { success: "Updated" }
     },
+    delete: async (event) => {
+        const JWT = event.cookies.get("AuthorizationToken");
+        const data = await event.request.formData();
+        const response = await fetch("http://localhost:3000/cartas/" + data.get("id") as string, {
+            method: 'DELETE',
+            headers: {
+                "Authorization": JWT || ""
+            }
+        });
+        if (response.status === 401) {
+            return fail(response.status, { error: "Unauthorized" })
+        }
+        else if (response.status !== 200) {
+            return fail(response.status, { error: response.statusText })
+        }
+        throw redirect(300, "/edit/cartas");
+    }
 } satisfies Actions;
