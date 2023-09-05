@@ -2,7 +2,9 @@
   import Grid from "$lib/components/Grid.svelte";
   import PeopleCard from "$lib/components/PeopleCard.svelte";
   import Title from "$lib/components/Title.svelte";
+  import { onMount } from "svelte";
   import type { PageData } from "./$types";
+  import { goto } from "$app/navigation";
   export let data: PageData;
 </script>
 
@@ -19,6 +21,7 @@
     <PeopleCard
       name={item.name}
       appointment={item.appointment}
+      photo={item.image}
       socials={new Map([
         ["discord", item.discord],
         ["email", item.email],

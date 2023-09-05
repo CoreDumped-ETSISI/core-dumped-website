@@ -10,6 +10,7 @@
 <div class="search-box">
   <button class="btn-search"><i class="fas fa-search" /></button>
   <input
+    id="search"
     type="text"
     class="input-search"
     placeholder="Escribe para buscar..."

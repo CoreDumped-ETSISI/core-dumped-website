@@ -15,6 +15,5 @@ export interface card {
 export const load: PageLoad = async ({ fetch, params }) => {
     const cards = await fetch('http://localhost:3000/cartas');
     let data: Array<card> = await cards.json();
-    console.log(data);
     return { data };
 };

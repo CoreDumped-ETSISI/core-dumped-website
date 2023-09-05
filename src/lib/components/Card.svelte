@@ -13,6 +13,7 @@
 
 <script lang="ts">
   import { page } from "$app/stores";
+  import { onMount } from "svelte";
   import StatusTag from "./StatusTag.svelte";
   export let id: string;
   export let title: string;
@@ -25,7 +26,7 @@
   if (description.length > 100) {
     description = description.slice(0, 97) + "...";
   }
-  date = new Date(date).toLocaleDateString("es-ES", {
+  $: date = new Date(date).toLocaleDateString("es-ES", {
     year: "numeric",
     month: "numeric",
     day: "numeric",

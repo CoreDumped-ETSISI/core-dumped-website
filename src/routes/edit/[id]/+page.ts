@@ -1,8 +1,7 @@
-import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
+import type { card } from '../../(main)/+page';
 
-
-import type { card } from "../+page"
 
 export const load: PageLoad = async ({ fetch, params }) => {
     if (params.id.length != 24) {
@@ -11,10 +10,14 @@ export const load: PageLoad = async ({ fetch, params }) => {
         });
     }
     const response = await fetch('http://localhost:3000/cartas/' + params.id);
-    console.log(response)
     if (response.ok) {
         let data: card = await response.json();
-        return { data };
+        const eventRes = await fetch('http://localhost:3000/eventos/categorias');
+        const projectRes = await fetch('http://localhost:3000/proyectos/categorias');
+        let events: Array<string> = await eventRes.json();
+        let projects: Array<string> = await projectRes.json();
+
+        return { events, projects, data };
     }
     else {
         throw error(response.status, {
