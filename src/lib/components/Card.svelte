@@ -9,7 +9,6 @@
   - date
   - status
   - category
-  - adminMode (activate this in creation screens preview so the image changes)
 -->
 
 <script lang="ts">
@@ -23,7 +22,6 @@
   export let date: string;
   export let status: string;
   export let category: string;
-  export const adminMode: boolean = false;
   const url: string = "/" + id;
   if (description.length > 100) {
     description = description.slice(0, 97) + "...";
@@ -33,19 +31,11 @@
     month: "numeric",
     day: "numeric",
   });
-
-  let img: HTMLImageElement;
-
-  onMount(() => {
-    if (adminMode && img.naturalWidth === 0 && img.naturalHeight === 0) {
-      img.src = "/fallback.png";
-    }
-  });
 </script>
 
 <a href={url}>
   <div class="card">
-    <img src={image_src} alt={title + "poster"} bind:this={img} />
+    <img src={image_src} alt={title + "poster"} />
     <div class="card_text">
       <div class="title">
         <h3>{title}</h3>

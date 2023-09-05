@@ -41,10 +41,10 @@
   };
 </script>
 
-<Title>Crear nueva carta</Title>
+<Title>Modificar carta</Title>
 <div class="container">
   <div class="cardColumn">
-    {#key [formData.title, formData.image, formData.category, formData.newCategory, formData.status, formData.description]}
+    {#key formData}
       <Card
         title={formData.title.length > 0 ? formData.title : "Título"}
         image_src={formData.image.length > 0 ? formData.image : "/fallback.png"}

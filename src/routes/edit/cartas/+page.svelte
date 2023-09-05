@@ -3,7 +3,6 @@
   import Card from "$lib/components/Card.svelte";
   import Filters from "$lib/components/Filters.svelte";
   import Grid from "$lib/components/Grid.svelte";
-  import Title from "$lib/components/Title.svelte";
   import type { PageData } from "./$types";
   import type { card } from "../../(main)/+page";
   import { filter } from "$lib/components/Filters.svelte";

@@ -58,7 +58,6 @@
         description={formData.description.length > 0
           ? formData.description
           : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat id leo eget tincidunt. Nullam ullamcorper."}
-        adminMode={true}
         id=""
       />
     {/key}
