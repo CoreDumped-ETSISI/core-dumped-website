@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the [Project Name] project will be documented in this file.
+All notable changes to the Core Dumped Website project will be documented in this file.
 
 ## [Unreleased]
 
@@ -39,7 +39,7 @@ All notable changes to the [Project Name] project will be documented in this fil
 
 ## Versioning
 
-[Project Name] follows [Semantic Versioning](https://semver.org/), where version numbers are formatted as MAJOR.MINOR.PATCH.
+Core Dumped Website follows [Semantic Versioning](https://semver.org/), where version numbers are formatted as MAJOR.MINOR.PATCH.
 
 - MAJOR version is increased when backward-incompatible changes are introduced.
 - MINOR version is increased when new features are added in a backward-compatible manner.
