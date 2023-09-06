@@ -7,4 +7,4 @@ Thank you to the following individuals who have contributed to this project:
 
 ## License
 
-[Project Name] is licensed under the [License Name](LICENSE) - [Link to License].
+Core Dumped Website is licensed under the [Apache 2.0 license](LICENSE).
