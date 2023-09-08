@@ -1,0 +1,44 @@
+{
+	"/(main)": [
+		"src/routes/(main)/+page.server.ts"
+	],
+	"/": [],
+	"/(main)/about": [
+		"src/routes/(main)/about/+page.server.ts"
+	],
+	"/admin": [
+		"src/routes/admin/+page.server.ts"
+	],
+	"/edit": [
+		"src/routes/edit/+layout.server.ts"
+	],
+	"/edit/add": [
+		"src/routes/edit/add/+page.server.ts",
+		"src/routes/edit/+layout.server.ts"
+	],
+	"/edit/cartas": [
+		"src/routes/edit/cartas/+page.server.ts",
+		"src/routes/edit/+layout.server.ts"
+	],
+	"/edit/personas": [
+		"src/routes/edit/personas/+page.server.ts",
+		"src/routes/edit/+layout.server.ts"
+	],
+	"/edit/personas/[id]": [
+		"src/routes/edit/personas/[id]/+page.server.ts",
+		"src/routes/edit/+layout.server.ts"
+	],
+	"/edit/[id]": [
+		"src/routes/edit/[id]/+page.server.ts",
+		"src/routes/edit/+layout.server.ts"
+	],
+	"/(main)/eventos": [
+		"src/routes/(main)/eventos/+page.server.ts"
+	],
+	"/(main)/proyectos": [
+		"src/routes/(main)/proyectos/+page.server.ts"
+	],
+	"/(main)/[id]": [
+		"src/routes/(main)/[id]/+page.server.ts"
+	]
+}

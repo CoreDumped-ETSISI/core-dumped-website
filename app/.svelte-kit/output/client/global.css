@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  height: 100%;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.slot {
+  padding: 20px;
+}
+/*
+This next section is styling for the header and navbar
+*/
+header {
+  min-height: 50px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.logo {
+  max-width: 150px;
+}
+.topnav {
+  margin-left: auto;
+}
+.topnav a {
+  color: black;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+/*
+The next part allows for the line animation when a navbar link is hovered
+*/
+.topnav a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  background-color: #5fb030;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.topnav a:hover {
+  color: #5fb030;
+}
+.topnav a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/*
+The next part disables the animation for the active link and underlines it permanently
+*/
+.topnav a.active {
+  color: #5fb030;
+  border-bottom: 1px solid #5fb030;
+}
+.topnav a.active:after {
+  background-color: #5fb030;
+}
+.topnav a.active:hover:after {
+  background-color: #5fb030;
+}
+
+/*
+This next section defines styling for the footer
+*/
+footer {
+  background: white;
+  width: 100%;
+  margin-top: auto;
+}
+footer .logo {
+  max-width: 100px;
+  margin-left: 0;
+  padding-right: 16px;
+}
+footer p {
+  padding: 10px;
+}
+.footer_wrap {
+  padding: 20px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.footer_socials ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+.footer_socials li {
+  margin: 8px;
+}
+.footer_socials a {
+  color: black !important;
+}
+.footer_socials a:hover {
+  color: #5fb030 !important;
+}
