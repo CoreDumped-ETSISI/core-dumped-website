@@ -1,5 +1,16 @@
 import { fail, json } from '@sveltejs/kit';
 import type { Actions } from './$types';
+import type { PageServerLoad } from './$types';
+import { API_URI } from "$env/static/private";
+
+
+export const load: PageServerLoad = async ({ fetch, params }) => {
+    const eventRes = await fetch(API_URI + '/eventos/categorias');
+    const projectRes = await fetch(API_URI + '/proyectos/categorias');
+    let events: Array<string> = await eventRes.json();
+    let projects: Array<string> = await projectRes.json();
+    return { events, projects };
+};
 
 export const actions = {
     default: async (event) => {
@@ -25,7 +36,7 @@ export const actions = {
         }
         const form = Object.fromEntries(jsonForm);
 
-        const response = await fetch("http://localhost:3000/cartas", {
+        const response = await fetch(API_URI + "/cartas", {
             method: 'POST',
             body: JSON.stringify(form),
             headers: {

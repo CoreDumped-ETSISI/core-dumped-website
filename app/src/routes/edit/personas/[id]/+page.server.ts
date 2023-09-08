@@ -1,5 +1,31 @@
 import { fail, json } from '@sveltejs/kit';
 import type { Actions } from './$types';
+import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
+import type { person } from '../../../(main)/about/+page.server';
+import { API_URI } from "$env/static/private";
+
+
+
+export const load: PageServerLoad = async ({ fetch, params }) => {
+    if (params.id.length != 24) {
+        throw error(404, {
+            message: "Not found"
+        });
+    }
+    const response = await fetch(API_URI + '/personas/' + params.id);
+    if (response.ok) {
+        let data: person = await response.json();
+
+        return { data };
+    }
+    else {
+        throw error(response.status, {
+            message: response.statusText
+        });
+    }
+
+};
 
 export const actions = {
     default: async (event) => {
@@ -39,11 +65,10 @@ export const actions = {
         if (linkedin) {
             jsonForm.set("linkedin", linkedin)
         }
-        console.log(jsonForm);
         const form = Object.fromEntries(jsonForm);
 
 
-        const response = await fetch("http://localhost:3000/personas/" + data.get("id") as string, {
+        const response = await fetch(API_URI + "/personas/" + data.get("id") as string, {
             method: 'PATCH',
             body: JSON.stringify(form),
             headers: {

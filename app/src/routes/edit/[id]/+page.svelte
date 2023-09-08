@@ -1,7 +1,7 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
   import { goto } from "$app/navigation";
-  import Card from "$lib/components/Card.svelte";
+  import CardComponent from "$lib/components/CardComponent.svelte";
   import Title from "$lib/components/Title.svelte";
   import type { ActionData, PageData } from "./$types";
   import type { Snapshot } from "./$types";
@@ -52,7 +52,7 @@
 <div class="container">
   <div class="cardColumn">
     {#key formData}
-      <Card
+      <CardComponent
         title={formData.title.length > 0 ? formData.title : "Título"}
         image_src={formData.image.length > 0 ? formData.image : "/fallback.png"}
         date={formData.date !== undefined && formData.date.length > 0

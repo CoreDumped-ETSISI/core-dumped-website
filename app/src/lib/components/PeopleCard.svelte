@@ -1,6 +1,6 @@
 <!-- 
   @component
-  # People Card
+  # People CardComponent
   A component for cards displaying people.
   #### The exported variables are all intended as inputs:
   - name

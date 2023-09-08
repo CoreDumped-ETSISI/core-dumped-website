@@ -1,11 +1,12 @@
 import { fail } from '@sveltejs/kit';
 import type { Actions } from './$types';
+import { API_URI } from "$env/static/private";
 
 export const actions = {
     default: async (event) => {
         const data = await event.request.formData();
         const password = data.get("password") as string;
-        const response = await fetch("http://localhost:3000/login", {
+        const response = await fetch(API_URI + "/login", {
             method: 'POST',
             body: JSON.stringify({ password }),
             headers: {

@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-import type { person } from '../../../(main)/about/+page';
+import type { person } from '../../../(main)/about/+page.server';
 
 
 export const load: PageLoad = async ({ fetch, params }) => {
@@ -9,7 +9,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
             message: "Not found"
         });
     }
-    const response = await fetch('http://localhost:3000/personas/' + params.id);
+    const response = await fetch(API_URI + '/personas/' + params.id);
     if (response.ok) {
         let data: person = await response.json();
 

@@ -1,10 +1,10 @@
 <!-- This page shows the project cards and allows to filter them by month, category, status and title-->
 <script lang="ts">
-  import Card from "$lib/components/Card.svelte";
+  import CardComponent from "$lib/components/CardComponent.svelte";
   import Filters from "$lib/components/Filters.svelte";
   import Grid from "$lib/components/Grid.svelte";
   import type { PageData } from "./$types";
-  import type { card } from "../../(main)/+page";
+  import type { Card } from "../../(main)/+page.server";
   import { filter } from "$lib/components/Filters.svelte";
 
   export let data: PageData;
@@ -21,8 +21,8 @@
     "Cancelado",
   ];
 
-  let filtered_type: card[];
-  let filtered: card[];
+  let filtered_type: Card[];
+  let filtered: Card[];
   $: if (type_filter === "Evento") {
     filtered_type = data.cards.filter(
       (item) => item.type.trim().toLowerCase() === "evento"
@@ -69,7 +69,7 @@
   {#key filtered}
     {#each filtered as item}
       <div class="edit">
-        <Card
+        <CardComponent
           id={item._id}
           title={item.title}
           description={item.description}

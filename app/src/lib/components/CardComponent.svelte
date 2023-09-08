@@ -1,6 +1,6 @@
 <!-- 
   @component
-  # Card
+  # CardComponent
   A component for project and event cards.
   #### The exported variables are all intended as inputs:
   - title

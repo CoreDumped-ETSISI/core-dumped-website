@@ -13,7 +13,7 @@
   - date_filter (Filter by month)
 -->
 <script context="module" lang="ts">
-  import type { card } from "../../routes/(main)/+page";
+  import type { Card } from "../../routes/(main)/+page.server";
   /**
    * Function that checks if two dates are on the same month
    * @param d1 date 1
@@ -37,13 +37,13 @@
    * @param date_filter Month and year to search
    */
   export const filter = function (
-    data: Array<card>,
+    data: Array<Card>,
     search_text: string,
     status_filter: string,
     category_filter: string,
     date_filter: string
-  ): card[] {
-    let array: card[] = [...data];
+  ): Card[] {
+    let array: Card[] = [...data];
     if (search_text.length > 0) {
       array = array.filter((item) =>
         item.title

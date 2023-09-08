@@ -1,7 +1,7 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
   import { goto } from "$app/navigation";
-  import Card from "$lib/components/Card.svelte";
+  import CardComponent from "$lib/components/CardComponent.svelte";
   import PeopleCard from "$lib/components/PeopleCard.svelte";
   import Title from "$lib/components/Title.svelte";
   import type { ActionData, PageData } from "./$types";

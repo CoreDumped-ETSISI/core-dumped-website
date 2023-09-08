@@ -2,7 +2,7 @@
   import type { PageData } from "./$types";
 
   export let data: PageData;
-  import Card from "$lib/components/Card.svelte";
+  import CardComponent from "$lib/components/CardComponent.svelte";
   import Grid from "$lib/components/Grid.svelte";
   import Title from "$lib/components/Title.svelte";
 </script>
@@ -12,7 +12,7 @@
   <Title>Novedades</Title>
   <Grid>
     {#each data.data as item}
-      <Card
+      <CardComponent
         id={item._id}
         title={item.title}
         description={item.description}

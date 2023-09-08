@@ -1,4 +1,5 @@
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
+import { API_URI } from "$env/static/private";
 
 export interface person {
     _id: string,
@@ -13,8 +14,8 @@ export interface person {
     linkedin: string,
 }
 
-export const load: PageLoad = async ({ fetch, params }) => {
-    const response = await fetch('http://localhost:3000/personas');
+export const load: PageServerLoad = async ({ fetch }) => {
+    const response = await fetch(API_URI + '/personas');
     let people: Array<person> = await response.json();
     return { people };
 };
