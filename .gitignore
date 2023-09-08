@@ -1,8 +1,8 @@
 .DS_Store
 node_modules
 build
-.svelte-kit/*
-!.svelte-kit/tsconfig.json
+app/.svelte-kit/*
+!app/.svelte-kit/tsconfig.json
 /package
 .env
 .env.*
