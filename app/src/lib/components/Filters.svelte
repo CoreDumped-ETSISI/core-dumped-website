@@ -142,7 +142,6 @@
   }
   select {
     padding-bottom: 2px;
-    margin-left: 8px;
   }
   button {
     width: fit-content;
@@ -155,5 +154,12 @@
   }
   button:active {
     box-shadow: none;
+  }
+  @media screen and (max-width: 950px) {
+    .filters {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
   }
 </style>
