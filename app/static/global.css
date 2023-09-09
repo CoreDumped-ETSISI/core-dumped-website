@@ -75,7 +75,15 @@ The next part disables the animation for the active link and underlines it perma
 .topnav a.active:hover:after {
   background-color: #5fb030;
 }
-
+/* When the screen is less than 650 pixels wide.*/
+@media screen and (max-width: 650px) {
+  .topnav a {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+  }
+}
 /*
 This next section defines styling for the footer
 */

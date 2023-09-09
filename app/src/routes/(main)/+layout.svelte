@@ -1,7 +1,9 @@
 <!--Layout for all pages, with header and footer-->
-<script>
+<script lang="ts">
   import { page } from "$app/stores";
   import "@fortawesome/fontawesome-free/css/all.min.css";
+  let nav: HTMLDivElement;
+  let showVerticalNav: boolean = false;
 </script>
 
 <link rel="stylesheet" href="/global.css" />
@@ -9,7 +11,7 @@
 <body>
   <header>
     <a href="/"><img src="/logo.png" alt="Logo" class="logo" /></a>
-    <div class="topnav">
+    <div class="topnav" bind:this={nav}>
       <a href="/" class:active={$page.url.pathname === "/"}>Inicio</a>
       <a href="/proyectos" class:active={$page.url.pathname === "/proyectos"}
         >Proyectos</a

@@ -1,5 +1,5 @@
 <!-- @component
-# Fake Terminal
+# Error Terminal
 This terminal is intended for use with error pages.
 It exports a `link` intended as an input which will be displayed in the message,
 as well as a `<slot>` intended for displaying the error message.
