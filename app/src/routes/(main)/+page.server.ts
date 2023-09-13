@@ -16,5 +16,5 @@ export interface Card {
 export const load: PageServerLoad = async ({ fetch, params }) => {
     const cards = await fetch(API_URI + '/cartas');
     let data: Array<Card> = await cards.json();
-    return { data };
+    return { data.slice(0,20) };
 };
