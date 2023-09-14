@@ -42,6 +42,17 @@ npm run build
 npm run preview
 ```
 
+### How to Dockerize
+
+First, create a new `.env` inside `/app`, following the example in `.env.example`.
+Then modify the Dockerfile `ENV ORIGIN` to the domain from which the page will be accessed(This solves the node-adapter cross-site POST actions restriction in svelte).
+
+Then run, replacing `imageName` and `port`
+```bash
+docker build -t <imageName> .
+docker run -p <port>:3000 <imageName>
+```
+
 ## Contributing
 
 We welcome contributions from the community! If you want to contribute to Core Dumped Website, please follow the guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
