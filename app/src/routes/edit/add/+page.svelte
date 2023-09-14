@@ -108,7 +108,11 @@
       <label for="image">URL de la imagen</label>
       <br />
       <small
-        >Subela a la unidad compartida de drive y hazla publica.
+        >Súbela a <a
+          href="https://drive.google.com/drive/u/0/folders/1URdPcjS6ty99Azp1RZMF6ohupAGnt2TO"
+          >Drive</a
+        >
+        de manera publica
         <br />
         Para mayor calidad, la imagen tiene que tener un ratio de aspecto de 1:1
         (cuadrada) <br /> y una resolucion minima de 1000x1000 pixeles.
