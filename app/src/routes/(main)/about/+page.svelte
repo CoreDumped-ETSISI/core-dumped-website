@@ -7,13 +7,20 @@
   import { goto } from "$app/navigation";
   export let data: PageData;
 </script>
-
+<svelte:head>
+  <title>Eventos</title>
+	<meta name="description" content="Encuentra y filtra los eventos de la asociación Core Dumped de la ETSISI-UPM" />
+</svelte:head>
 <Title>Sobre Nosotros</Title>
 <p class="about">
-  Core Dumped es una asociacion de estudiantes de la ETSISI-UPM. <br />
-  Nos dedicamos a organizar proyectos, eventos y talleres educativos para nuestra
-  escuela. <br /> ¡Ven a visitarnos en la zona de asociaciones bajo al rotonda, al
+  Core Dumped es una asociacion de estudiantes de la ETSISI-UPM con especial interés en
+  las nuevas tecnologías y tendencias. <br />
+  Nos dedicamos a organizar proyectos, eventos y talleres educativos
+  para los alumnos de la escuela y personas interesadas afin de complementar la formación
+  académica. <br /> ¡Ven a visitarnos en la zona de asociaciones bajo la rotonda, al
   lado de la cafetería!
+
+
 </p>
 <Title>Directiva</Title>
 <Grid width={225}>

@@ -6,7 +6,10 @@
   export let data: PageData;
   let item = data.data;
 </script>
-
+<svelte:head>
+  <title>{item.title}</title>
+	<meta name="description" content={item.description} />
+</svelte:head>
 <div class="center">
   <div class="landscapeFlex">
     <div class="datacard">

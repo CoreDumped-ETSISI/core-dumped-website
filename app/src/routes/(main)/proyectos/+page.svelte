@@ -31,7 +31,10 @@
     date_filter
   );
 </script>
-
+<svelte:head>
+  <title>Proyectos</title>
+	<meta name="description" content="Encuentra y filtra los proyectos de la asociación Core Dumped de la ETSISI-UPM" />
+</svelte:head>
 <Title>Proyectos</Title>
 <Filters
   bind:search_text

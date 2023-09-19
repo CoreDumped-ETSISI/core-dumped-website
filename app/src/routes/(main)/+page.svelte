@@ -6,7 +6,10 @@
   import Grid from "$lib/components/Grid.svelte";
   import Title from "$lib/components/Title.svelte";
 </script>
-
+<svelte:head>
+  <title>Novedades</title>
+	<meta name="description" content="Las últimas actividades, talleres y proyectos de la asociación Core Dumped de la ETSISI-UPM" />
+</svelte:head>
 <!--Home page, here new projects and events will be shown-->
 <div class="news_wrap">
   <Title>Novedades</Title>
