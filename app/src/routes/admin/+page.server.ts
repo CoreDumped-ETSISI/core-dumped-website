@@ -20,7 +20,7 @@ export const actions = {
         event.cookies.set('AuthorizationToken', `Bearer ${login.token}`, {
             httpOnly: true,
             path: '/',
-            secure: false, //TODO set to true when SSL certificates are added
+            secure: true,
             sameSite: 'strict',
             maxAge: 60 * 60 * 2 // 2h
         });
