@@ -64,7 +64,8 @@
     flex-direction: column;
     overflow: hidden;
     width: 300px;
-    height: 450px;
+    height: fit-content;
+    padding-bottom: 8px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.205);
     border-radius: 8px;
     background-color: white;
@@ -105,8 +106,8 @@
   .tags {
     display: flex;
     flex-direction: row;
-    margin: 5px 10px 10px 10px;
-    margin-top: auto;
+    margin-left: 4px;
+    margin-right: 4px;
   }
   .tag {
     float: right;
