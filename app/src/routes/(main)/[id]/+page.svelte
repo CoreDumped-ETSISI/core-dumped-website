@@ -87,8 +87,8 @@
     background: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
     flex: 2 1 auto;
-    text-align: justify;
-    overflow-y: auto;
+    text-align: left;
+    overflow-wrap: break-word;
     font-size: 20px;
     line-height: 1.5;
   }
