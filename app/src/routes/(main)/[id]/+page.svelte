@@ -6,9 +6,10 @@
   export let data: PageData;
   let item = data.data;
 </script>
+
 <svelte:head>
   <title>{item.title}</title>
-	<meta name="description" content={item.description} />
+  <meta name="description" content={item.description} />
 </svelte:head>
 <div class="center">
   <div class="landscapeFlex">
@@ -89,6 +90,7 @@
     text-align: justify;
     overflow-y: auto;
     font-size: 20px;
+    line-height: 1.5;
   }
   .description p {
     margin-top: 8px;
