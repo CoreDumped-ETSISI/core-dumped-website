@@ -5,6 +5,7 @@
 }
 body {
   height: 100%;
+  width: 100%
   background-color: antiquewhite;
   display: flex;
   flex-direction: column;
@@ -19,6 +20,7 @@ This next section is styling for the header and navbar
 header {
   min-height: 50px;
   padding: 20px;
+  width: 100%;
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   display: flex;
@@ -91,6 +93,8 @@ footer {
   background: white;
   width: 100%;
   margin-top: auto;
+  height: fit-content;
+  padding: 8px;
 }
 footer .logo {
   max-width: 100px;
@@ -106,12 +110,13 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 .footer_socials ul {
   list-style-type: none;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+
 }
 .footer_socials li {
   margin: 8px;
