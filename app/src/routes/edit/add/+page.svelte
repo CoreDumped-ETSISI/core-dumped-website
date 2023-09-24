@@ -98,7 +98,7 @@
         id="description"
         placeholder="Descripción"
         bind:value={formData.description}
-        cols="50"
+        cols="30"
         rows="10"
         minlength="100"
         required
