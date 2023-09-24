@@ -11,6 +11,8 @@ export interface Card {
     image: string;
     category: string;
     status: string;
+    clickable_link: string;
+    clickable_link_text: string;
 }
 
 export const load: PageServerLoad = async ({ fetch, params }) => {

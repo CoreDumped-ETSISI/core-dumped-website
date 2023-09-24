@@ -24,6 +24,8 @@ export const actions = {
         jsonForm.set("description", data.get("description") as string);
         jsonForm.set("status", data.get("status") as string);
         jsonForm.set("image", data.get("image") as string);
+        jsonForm.set("clickable_link", data.get("clickable_link") as string);
+        jsonForm.set("clickable_link_text", data.get("clickable_link_text") as string);
 
         if ((data.get("date") as string).length > 0) {
             jsonForm.set("date", new Date(data.get("date") as string).toISOString());
@@ -35,7 +37,6 @@ export const actions = {
             jsonForm.set("category", data.get("category") as string);
         }
         const form = Object.fromEntries(jsonForm);
-
         const response = await fetch(API_URI + "/cartas", {
             method: 'POST',
             body: JSON.stringify(form),

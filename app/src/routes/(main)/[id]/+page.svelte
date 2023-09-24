@@ -36,6 +36,9 @@
         <p>{item.description}</p>
       </div>
     </div>
+    {#if item.clickable_link}
+      <a href={item.clickable_link}>{item.clickable_link_text}</a>
+    {/if}
   </div>
 </div>
 
@@ -50,6 +53,7 @@
       flex-direction: column;
       max-width: 80%;
       align-content: center;
+      gap: 8px;
     }
     img {
       max-width: 50vh;
@@ -68,6 +72,12 @@
     .container {
       flex-flow: row wrap;
     }
+    .landscapeFlex {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      gap: 8px;
+    }
   }
   .container {
     margin-top: 8px;
@@ -84,8 +94,6 @@
   .description {
     border-radius: 24px;
     padding: 8px;
-    height: fit-content;
-    width: 100%;
     background: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
     flex: 2 1 auto;
@@ -122,5 +130,23 @@
     color: #5fb030;
     font-weight: 600;
     border-radius: 24px;
+  }
+  a {
+    align-items: center;
+    all: unset;
+    width: 50%;
+    background-color: #5fb030;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.205);
+    border-radius: 16px;
+    border: transparent;
+    padding: 6px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  a:active {
+    box-shadow: none;
   }
 </style>
