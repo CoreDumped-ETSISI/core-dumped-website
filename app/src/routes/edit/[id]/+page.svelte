@@ -10,7 +10,7 @@
   export let form: ActionData;
 
   let disable: boolean = true;
-  let disableNew: boolean = true;
+  let disableNewCategory: boolean = true;
   let categories: string[] = [];
   let deleting = false;
   let validDelete = false;
@@ -29,9 +29,11 @@
     category: data.data.category,
     newCategory: "",
     status: data.data.status,
+    clickable_link: data.data.clickable_link,
+    clickable_link_text: data.data.clickable_link_text,
   };
   $: disable = formData.type === "";
-  $: disableNew = formData.category !== "new";
+  $: disableNewCategory = formData.category !== "new";
   $: if (formData.type === "Proyecto") {
     categories = [...data.projects];
   } else if (formData.type === "Evento") {
@@ -171,8 +173,8 @@
         placeholder="Nueva categoría"
         size="14"
         maxlength="16"
-        disabled={disable || disableNew}
-        required={!disableNew}
+        disabled={disable || disableNewCategory}
+        required={!disableNewCategory}
       />
       <br />
       <label for="status">Estado</label>
@@ -189,6 +191,34 @@
         <option value="Cancelado">Cancelado</option>
         <option value="Próximamente">Próximamente</option>
       </select>
+      <br />
+      <label for="clickable_link">Link externo</label>
+      <br />
+      <small
+        >Opcional: link para añadir en la página del evento/proyecto.
+        <br /> (Por ejemplo un link a un formulario de inscripción)
+      </small>
+      <br />
+      <input
+        type="url"
+        name="clickable_link"
+        id="clickable_link"
+        bind:value={formData.clickable_link}
+        placeholder="https://site.com"
+        disabled={disable}
+      />
+      <label for="clickable_link_text" style="font-size:smaller;"
+        >Texto para el link:</label
+      >
+      <input
+        type="text"
+        name="clickable_link_text"
+        id="clickable_link_text"
+        bind:value={formData.clickable_link_text}
+        maxlength="30"
+        placeholder="Inscríbase aquí!"
+        disabled={disable || formData.clickable_link === ""}
+      />
       <br />
       <button type="submit" disabled={disable}>Actualizar</button>
       <button
