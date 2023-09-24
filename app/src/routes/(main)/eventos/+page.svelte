@@ -32,7 +32,7 @@
   );
 </script>
 
-<Title>Proyectos</Title>
+<Title>Eventos</Title>
 <Filters
   bind:search_text
   bind:status_filter

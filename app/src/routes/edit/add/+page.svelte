@@ -98,7 +98,7 @@
         id="description"
         placeholder="Descripción"
         bind:value={formData.description}
-        cols="50"
+        cols="30"
         rows="10"
         minlength="100"
         required
@@ -113,6 +113,9 @@
           >Drive</a
         >
         de manera publica
+        <br />
+        Consigue el link para insertarla
+        <a href="https://www.labnol.org/embed/google/drive/">aquí</a>
         <br />
         Para mayor calidad, la imagen tiene que tener un ratio de aspecto de 1:1
         (cuadrada) <br /> y una resolucion minima de 1000x1000 pixeles.

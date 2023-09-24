@@ -6,9 +6,10 @@
   export let data: PageData;
   let item = data.data;
 </script>
+
 <svelte:head>
   <title>{item.title}</title>
-	<meta name="description" content={item.description} />
+  <meta name="description" content={item.description} />
 </svelte:head>
 <div class="center">
   <div class="landscapeFlex">
@@ -47,7 +48,7 @@
     .landscapeFlex {
       display: flex;
       flex-direction: column;
-      max-width: 75%;
+      max-width: 80%;
       align-content: center;
     }
     img {
@@ -82,13 +83,16 @@
   }
   .description {
     border-radius: 24px;
-    padding: 16px;
+    padding: 8px;
+    height: fit-content;
+    width: 100%;
     background: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
     flex: 2 1 auto;
-    text-align: justify;
-    overflow-y: auto;
+    text-align: left;
+    overflow-wrap: break-word;
     font-size: 20px;
+    line-height: 1.5;
   }
   .description p {
     margin-top: 8px;
