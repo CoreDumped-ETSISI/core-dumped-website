@@ -48,7 +48,7 @@
     .landscapeFlex {
       display: flex;
       flex-direction: column;
-      max-width: 75%;
+      max-width: 80%;
       align-content: center;
     }
     img {
@@ -83,7 +83,9 @@
   }
   .description {
     border-radius: 24px;
-    padding: 16px;
+    padding: 8px;
+    height: fit-content;
+    width: 100%;
     background: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
     flex: 2 1 auto;
