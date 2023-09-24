@@ -32,7 +32,7 @@
         >Sobre nosotros</a
       >
     </div>
-    <button class="menu_button" on:click={changeVisibility}>
+    <button class="menu" on:click={changeVisibility}>
       <i class="fa-solid fa-bars fa-2xl" style="color: #5fb030;" />
     </button>
   </header>
@@ -61,7 +61,7 @@
       <div class="footer_socials">
         <ul>
           <li>
-            <a href="mailto:coredumped.etsisi@gmail.com">
+            <a href="mailto:coredumped.etsisi@upm.es">
               <i class="fa-solid fa-envelope fa-2xl" />
             </a>
           </li>
