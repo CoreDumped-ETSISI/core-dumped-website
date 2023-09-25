@@ -213,6 +213,7 @@
         maxlength="30"
         placeholder="Inscríbase aquí!"
         disabled={disable || formData.clickable_link === ""}
+        required={formData.clickable_link === ""}
       />
       <br />
       <button type="submit" disabled={disable}>Publicar</button>
