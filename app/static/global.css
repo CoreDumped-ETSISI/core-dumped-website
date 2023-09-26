@@ -4,11 +4,10 @@
   font-family: "Roboto", sans-serif;
 }
 body {
-  height: 100%;
   width: 100%;
   background-color: antiquewhite;
   position: absolute;
-  min-height: 100vh;
+  min-height: 100%;
 }
 .slot {
   padding: 20px;
@@ -121,7 +120,8 @@ This next section defines styling for the footer
 footer {
   background: white;
   width: 100%;
-  margin-top: auto;
+  position: absolute;
+  bottom: 0;
   height: fit-content;
 }
 footer .logo {
