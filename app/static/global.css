@@ -120,7 +120,6 @@ This next section defines styling for the footer
 footer {
   background: white;
   width: 100%;
-  position: absolute;
   bottom: 0;
   height: fit-content;
 }
