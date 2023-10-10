@@ -5,6 +5,10 @@
   import type { PageData } from "./$types";
   export let data: PageData;
   let item = data.data;
+  const desactivarBotón =
+    item.type === "Evento" &&
+    (item.status === "Completado" || item.status === "Cancelado");
+  console.log(desactivarBotón);
 </script>
 
 <svelte:head>
@@ -36,7 +40,7 @@
         <p>{item.description}</p>
       </div>
     </div>
-    {#if item.clickable_link}
+    {#if item.clickable_link && !desactivarBotón}
       <a href={item.clickable_link}>{item.clickable_link_text}</a>
     {/if}
   </div>
@@ -132,8 +136,9 @@
     border-radius: 24px;
   }
   a {
-    align-items: center;
     all: unset;
+    cursor: pointer;
+    align-items: center;
     width: 50%;
     background-color: #5fb030;
     color: white;
