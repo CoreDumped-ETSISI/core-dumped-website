@@ -9,7 +9,7 @@
 <style>
   h1 {
     color: #5fb030;
-    text-align: left;
+    text-align: center;
   }
   h1:after {
     content: "";
