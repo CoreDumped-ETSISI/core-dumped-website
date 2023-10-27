@@ -69,7 +69,7 @@ export const actions = {
 
 
         const response = await fetch(API_URI + "/personas/" + data.get("id") as string, {
-            method: 'PATCH',
+            method: 'PUT',
             body: JSON.stringify(form),
             headers: {
                 'Content-Type': 'application/json',
