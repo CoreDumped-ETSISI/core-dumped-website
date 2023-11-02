@@ -2,35 +2,11 @@
 
 All notable changes to the Core Dumped Website project will be documented in this file.
 
-## [Unreleased]
-
-### Added
-
-- List new features or functionalities that have been added but not yet released.
+## 1.1.2
 
 ### Changed
 
-- List changes to existing features or functionalities.
-
-### Deprecated
-
-- List functionalities that will be removed in future releases.
-
-### Removed
-
-- List functionalities that have been removed in this release.
-
-### Fixed
-
-- List bug fixes and issues that have been resolved.
-
-### Security
-
-- List security-related changes or vulnerability fixes.
-
-## [Version] - YYYY-MM-DD
-
-... Repeat the above sections for each new version release.
+- Changed PATCH requests to PUT requests to align with new API version.
 
 ## How to Use This Changelog
 
