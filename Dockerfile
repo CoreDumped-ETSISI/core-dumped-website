@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY ./app .
 
-RUN npm ci --omit dev
+RUN npm i --omit dev
 
 RUN npm install dotenv
 
