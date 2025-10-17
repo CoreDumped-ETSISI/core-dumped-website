@@ -2,7 +2,6 @@
 
 <link rel="stylesheet" href="/global.css" />
 
-<body>
   <header>
     <h2>Admin Mode</h2>
   </header>
@@ -10,8 +9,7 @@
   <div class="slot">
     <slot />
   </div>
-  <footer /></body
->
+  <footer />
 
 <style>
   h2 {

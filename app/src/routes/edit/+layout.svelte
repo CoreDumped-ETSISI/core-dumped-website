@@ -6,7 +6,6 @@
 
 <link rel="stylesheet" href="/global.css" />
 
-<body>
   <header>
     <h2>Admin Mode</h2>
     <div class="topnav">
@@ -29,7 +28,6 @@
       <a href="/"><img src="/logo.png" alt="Logo" class="logo" /></a>
     </div>
   </footer>
-</body>
 
 <style>
   h2 {
