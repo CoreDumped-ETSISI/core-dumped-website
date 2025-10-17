@@ -1,6 +1,6 @@
 <!--Layout for all pages, with header and footer-->
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import "@fortawesome/fontawesome-free/css/all.min.css";
   let nav: HTMLDivElement;
   let showVerticalNav: boolean = false;
@@ -17,18 +17,17 @@
 
 <link rel="stylesheet" href="/global.css" />
 
-<body>
   <header style={header_style}>
     <a href="/"><img src="/logo.png" alt="Logo" class="logo" /></a>
     <div class="topnav" bind:this={nav}>
-      <a href="/" class:active={$page.url.pathname === "/"}>Inicio</a>
-      <a href="/proyectos" class:active={$page.url.pathname === "/proyectos"}
+      <a href="/" class:active={page.url.pathname === "/"}>Inicio</a>
+      <a href="/proyectos" class:active={page.url.pathname === "/proyectos"}
         >Proyectos</a
       >
-      <a href="/eventos" class:active={$page.url.pathname === "/eventos"}
+      <a href="/eventos" class:active={page.url.pathname === "/eventos"}
         >Eventos</a
       >
-      <a href="/about" class:active={$page.url.pathname === "/about"}
+      <a href="/about" class:active={page.url.pathname === "/about"}
         >Sobre nosotros</a
       >
     </div>
@@ -38,14 +37,14 @@
   </header>
   {#if showVerticalNav}
     <div class="hidden" bind:this={nav}>
-      <a href="/" class:active={$page.url.pathname === "/"}>Inicio</a>
-      <a href="/proyectos" class:active={$page.url.pathname === "/proyectos"}
+      <a href="/" class:active={page.url.pathname === "/"}>Inicio</a>
+      <a href="/proyectos" class:active={page.url.pathname === "/proyectos"}
         >Proyectos</a
       >
-      <a href="/eventos" class:active={$page.url.pathname === "/eventos"}
+      <a href="/eventos" class:active={page.url.pathname === "/eventos"}
         >Eventos</a
       >
-      <a href="/about" class:active={$page.url.pathname === "/about"}
+      <a href="/about" class:active={page.url.pathname === "/about"}
         >Sobre nosotros</a
       >
     </div>
@@ -94,4 +93,3 @@
       </div>
     </div>
   </footer>
-</body>
